@@ -1,0 +1,14 @@
+# Ignora arquivos de metadados de sistema
+._*
+
+# Ignora diretórios de compilação do Xcode
+build/
+DerivedData/
+
+# Ignora arquivos de lock e temporários do Xcode
+*.xcuserstate
+*.xcworkspace
+*.lock
+
+# Ignora arquivos temporários do macOS
+.DS_Store

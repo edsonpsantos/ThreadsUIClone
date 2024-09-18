@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @Environment(\.dismiss) var dismiss
     
     @State private var email = ""
     @State private var password = ""
@@ -40,7 +41,6 @@ struct RegistrationView: View {
 
             }
             Button {
-                
             } label: {
                 Text("Sign Up")
                     .modifier(ThreadsButtonModifier())
@@ -52,6 +52,7 @@ struct RegistrationView: View {
             Divider()
             
             Button{
+                dismiss()
             } label: {
                 HStack(spacing: 3){
                     Text("Already have an account?")

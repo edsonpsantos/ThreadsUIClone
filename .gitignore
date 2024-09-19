@@ -12,3 +12,6 @@ DerivedData/
 
 # Ignora arquivos temporários do macOS
 .DS_Store
+
+# Ignore info plist
+ThreadsUIClone/GoogleService-Info.plist

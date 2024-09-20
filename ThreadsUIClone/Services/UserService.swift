@@ -16,7 +16,6 @@ class UserService {
     
     static let shared = UserService()
     
-    
     init() {
         Task {
             try await fetchCurrentUsers()
@@ -33,6 +32,7 @@ class UserService {
         self.currentUser = user
     }
     
+    @MainActor
     static func fetchUsers() async throws -> [User] {
         guard let currentUId = Auth.auth().currentUser?.uid else { return [] }
         let snapshot = try await Firestore.firestore().collection("users").getDocuments()
@@ -44,5 +44,14 @@ class UserService {
     
     func reset() {
         self.currentUser = nil
+    }
+    
+    @MainActor
+    func updateUserProfileImage(withImageUrl imageUrl: String) async throws {
+        guard let currentId = Auth.auth().currentUser?.uid else { return }
+        DispatchQueue.main.async {
+            Firestore.firestore().collection("users").document(currentId).updateData(["profileImageUrl": imageUrl])
+            self.currentUser?.profileImageUrl = imageUrl
+        }
     }
 }

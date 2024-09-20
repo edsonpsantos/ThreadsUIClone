@@ -5,7 +5,6 @@
 //  Created by EDSON SANTOS on 19/09/2024.
 //
 
-import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 

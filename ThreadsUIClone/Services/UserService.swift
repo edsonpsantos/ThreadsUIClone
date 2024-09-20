@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 class UserService {
     
-    @Published var currentUsers: User?
+    @Published var currentUser: User?
 
     static let shared = UserService()
     
@@ -30,7 +30,11 @@ class UserService {
         
         let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
         let user = try snapshot.data(as: User.self)
-        self.currentUsers = user
+        self.currentUser = user
         print("DEBUG: User is \(user)")
+    }
+    
+    func reset() {
+        self.currentUser = nil
     }
 }

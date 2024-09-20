@@ -18,8 +18,11 @@ struct ProfileView: View {
         return UIScreen.main.bounds.width / count - 16
     }
     
+    private var currentUser: User? {
+        return viewModel.currentUser
+    }
+    
     var body: some View {
-        
         NavigationStack {
             ScrollView(showsIndicators: false){
                 VStack(spacing: 20) {
@@ -29,17 +32,20 @@ struct ProfileView: View {
                             
                             //Fullname and Username
                             VStack(alignment:.leading, spacing: 4){
-                                Text("Marisa Maxwell")
+                                Text(currentUser?.fullname ?? "")
                                     .font(.title2)
                                     .fontWeight(.semibold)
                                 
                                 
-                                Text("marisamax99")
+                                Text(currentUser?.username ?? "")
                                     .font(.subheadline)
                             }
                             
-                            Text("UIUX Designer Freelancer")
-                                .font(.footnote)
+                            //If don't have any info in bio don't mhave to show some unecessary space on screen
+                            if let bio = currentUser?.bio{
+                                Text(bio)
+                                    .font(.footnote)
+                            }
                             
                             Text("2 followers")
                                 .font(.caption)

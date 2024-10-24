@@ -16,7 +16,7 @@ struct CreateThreadView: View {
         NavigationStack{
             VStack{
                 HStack(alignment: .top){
-                    CirculeProfileImageView()
+                    CirculeProfileImageView(user: nil, size: .small)
                     
                     VStack(alignment: .leading, spacing: 4){
                         Text("marisamax99")

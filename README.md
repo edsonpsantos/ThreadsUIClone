@@ -8,7 +8,7 @@ The repository contains all code based on an MVVM architecture pattern to organi
 ##  🤔 Technologies and Features I will use:
 
 ##App features:
-* Registration and authentication form.
+* Registration and authentication form using Firebase.
 * Uploading topics to generate conversarions with followers.
 * In-app notification system by topics with likes and replies.
 * User profile and settings views, managing notifications and updating profile informations.
@@ -21,6 +21,11 @@ The repository contains all code based on an MVVM architecture pattern to organi
 * 100% Swift
 * 100% SwiftUI
 * MVVM Architecture
+* Firebase
+* Firebase Authentication
+* Fireabse Storage
+* Firebase Database
+* Kingfisher to caching images
 * Good practices
 
 ##  📱 App screens:
